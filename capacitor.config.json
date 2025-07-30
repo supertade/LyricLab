@@ -1,0 +1,77 @@
+{
+  "appId": "com.lyricsapp.app",
+  "appName": "LyricLab",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "cleartext": true,
+    "allowNavigation": [
+      "http://localhost/*",
+      "https://*.firebaseapp.com/*",
+      "https://*.googleapis.com/*",
+      "https://*.firebaseio.com/*",
+      "https://*.cloudfunctions.net/*",
+      "https://firebase.googleapis.com/*",
+      "https://firestore.googleapis.com/*",
+      "https://identitytoolkit.googleapis.com/*",
+      "https://securetoken.googleapis.com/*",
+      "https://accounts.google.com/*",
+      "https://www.googleapis.com/*",
+      "https://www.gstatic.com/*",
+      "https://fonts.googleapis.com/*",
+      "https://fonts.gstatic.com/*",
+      "msauth://*"
+    ]
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 3000,
+      "launchAutoHide": true,
+      "backgroundColor": "#ffffff",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": false,
+      "androidSpinnerStyle": "large",
+      "spinnerColor": "#0055CC"
+    },
+    "SafeArea": {
+      "enabled": true,
+      "customColorsForSystemBars": true,
+      "statusBarColor": "#00000000",
+      "statusBarContent": "light",
+      "navigationBarColor": "#00000000",
+      "navigationBarContent": "light",
+      "offset": 0
+    },
+    "StatusBar": {
+      "overlaysWebView": true,
+      "style": "dark",
+      "backgroundColor": "#00000000"
+    },
+    "CapacitorHttp": {
+      "enabled": true
+    },
+    "App": {
+      "launchUrl": "capacitor://localhost"
+    },
+    "FirebaseApp": {
+      "projectId": "lyriclab-a6ec8",
+      "appId": "1:670803502989:web:43f3f50cf9ed26633b7fc4"
+    },
+    "FirebaseAuthentication": {
+      "skipNativeAuth": false,
+      "providers": ["google.com"]
+    },
+    "FirebaseFirestore": {
+      "enablePersistence": true
+    }
+  },
+  "android": {
+    "versionCode": 5,
+    "versionName": "1.0.4",
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": true
+  }
+}

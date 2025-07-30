@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hintergrund-Kreis -->
+  <rect width="512" height="512" rx="128" fill="#0055CC"/>
+  
+  <!-- Notensymbol und Textlinien -->
+  <g transform="translate(128, 128) scale(10.6)">
+    <!-- Notenstiel -->
+    <path d="M8 4L8 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Notenkopf -->
+    <path d="M8 16C8 17.657 6.657 19 5 19C3.343 19 2 17.657 2 16C2 14.343 3.343 13 5 13C6.657 13 8 14.343 8 16Z" stroke="white" stroke-width="2"/>
+    
+    <!-- Notenschwanz -->
+    <path d="M8 4L16 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+    
+    <!-- Textlinie 1 -->
+    <path d="M12 10H20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    
+    <!-- Textlinie 2 -->
+    <path d="M14 14H22" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg> 

@@ -1,0 +1,42 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // User documents - each user can only access their own data (temporarily removed email verification requirement)
+    match /users/{userId} {
+      allow read, write: if request.auth != null 
+        && request.auth.uid == userId;
+      
+      // Songs subcollection - users can only access their own songs (temporarily removed email verification requirement)
+      match /songs/{songId} {
+        allow read, write, create, update, delete: if request.auth != null 
+          && request.auth.uid == userId;
+      }
+    }
+    
+    // Collaboration sessions - allow authenticated users (temporarily removed email verification requirement)
+    match /collaborations/{sessionId} {
+      allow read, write, create, update: if request.auth != null;
+      
+      // Collaboration events subcollection
+      match /events/{eventId} {
+        allow read, write, create: if request.auth != null;
+      }
+    }
+    
+    // Shared songs for collaboration - allow authenticated users (temporarily removed email verification requirement)
+    match /shared_songs/{sessionId} {
+      allow read, write, create, update: if request.auth != null;
+    }
+    
+    // Test collection for connectivity checks - read-only for authenticated users
+    match /test/{document} {
+      allow read: if request.auth != null;
+    }
+    
+    // Default deny all other documents
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+} 

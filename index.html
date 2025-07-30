@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <title>LyricLab</title>
+    <meta name="description" content="Erstelle, bearbeite und organisiere Songtexte mit automatischer Silbenzählung" />
+    
+    <!-- Web app capability -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- Apple specific meta tags (for backward compatibility) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="LyricLab" />
+    
+    <!-- Theme color for browser chrome -->
+    <meta name="theme-color" content="#0055CC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0055CC" media="(prefers-color-scheme: dark)" />
+    
+    <!-- Font optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <noscript>
+      <div style="padding: 2rem; text-align: center;">
+        <h1>LyricLab benötigt JavaScript</h1>
+        <p>Bitte aktiviere JavaScript in deinem Browser, um diese App zu nutzen.</p>
+      </div>
+    </noscript>
+  </body>
+</html>

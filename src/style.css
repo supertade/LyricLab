@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+    font-feature-settings: "kern";
+  }
+  
+  /* Improve focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
+  }
+  
+  /* Touch-friendly tap targets */
+  button, a, input, select, textarea {
+    @apply touch-manipulation;
+  }
+}
+
+@layer components {
+  .syllable-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
+           bg-blue-100 dark:bg-blue-900/20 text-blue-800 dark:text-blue-300;
+  }
+  
+  .lyric-line {
+    @apply flex items-center gap-2 py-1 px-2 rounded hover:bg-gray-100 
+           dark:hover:bg-gray-800/50 transition-all duration-200;
+  }
+  
+  /* Apple-inspired card styles */
+  .card {
+    @apply bg-white dark:bg-gray-800/80 backdrop-blur-sm rounded-xl shadow-sm 
+           hover:shadow-md transition-all duration-300 border border-gray-200/50 
+           dark:border-white/5 overflow-hidden;
+  }
+  
+  /* Interactive element hover effects */
+  .interactive {
+    @apply transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+  }
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Support for iOS safe area padding using CSS variables from the SafeArea plugin */
+:root {
+  --safe-area-inset-top: var(--safe-area-inset-top, 0px);
+  --safe-area-inset-right: var(--safe-area-inset-right, 0px);
+  --safe-area-inset-bottom: var(--safe-area-inset-bottom, 0px);
+  --safe-area-inset-left: var(--safe-area-inset-left, 0px);
+}
+
+/* Utility classes for safe area */
+.pt-safe {
+  padding-top: var(--safe-area-inset-top);
+}
+
+.pr-safe {
+  padding-right: var(--safe-area-inset-right);
+}
+
+.pb-safe {
+  padding-bottom: var(--safe-area-inset-bottom);
+}
+
+.pl-safe {
+  padding-left: var(--safe-area-inset-left);
+}
+
+.mt-safe {
+  margin-top: var(--safe-area-inset-top);
+}
+
+/* Safe area insets fallback for notched devices */
+@supports(padding: max(0px)) {
+  .pb-safe {
+    padding-bottom: max(var(--safe-area-inset-bottom), 1rem);
+  }
+
+  body, .safe-area-inset {
+    padding-left: max(env(safe-area-inset-left), var(--safe-area-inset-left));
+    padding-right: max(env(safe-area-inset-right), var(--safe-area-inset-right));
+  }
+  
+  .safe-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), var(--safe-area-inset-bottom), 0.5rem);
+  }
+}
